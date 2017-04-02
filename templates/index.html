@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="{{ url_for ('static', filename='favicon/favicon-96x96.png')}}">
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for ('static', filename='css/carousel/carousel.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/theme.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/bootstrap-reset.css')}}">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <!--external css-->
+    <link rel="stylesheet" href="{{ url_for ('static', filename='assets/font-awesome/css/font-awesome.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/flexslider.css')}}"/>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='assets/bxslider/jquery.bxslider.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/animate.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='assets/owlcarousel/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='assets/owlcarousel/owl.theme.css')}}">
+
+    <link rel="stylesheet" media="screen" href="{{ url_for ('static', filename='css/superfish.css')}}" >
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato' >
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='css/component.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/style-responsive.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/style-responsive.css')}}">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+    <script src="{{ url_for ('static', filename='js/html5shiv.js')}}">
+    </script>
+    <script src="{{ url_for ('static', filename='js/respond.min.js')}}">
+    </script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!--header start-->
+    <header class="head-section">
+      <div class="navbar navbar-default navbar-static-top container">
+          <div class="navbar-header">
+              <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">М<span>едовая ферма</span></a>
+          </div>
+          <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                  <li>
+                      <a href="/">Главная</a>
+                  </li>
+                  <li>
+                      <a href="/med">Наш мёд</a>
+                  </li>
+                  <li>
+                      <a href="/ferma">Медовая ферма</a>
+                  </li>
+                  <li>
+                      <a href="/contacts">Контакты</a>
+                  </li>
+                  <li>
+                      <a href="/about">О компании</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </header>
+    <!--header end-->
+
+    <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#bs-carousel" data-slide-to="1"></li>
+    <li data-target="#bs-carousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item slides active">
+      <div class="slide-1"></div>
+      <div class="hero">
+        <hgroup>
+            <h1>Экологически чистый мёд!</h1>
+            <h3>Проиизводство мёда в экологически чистом районе - Национальный парк "Самарская лука"</h3>
+        </hgroup>
+      </div>
+    </div>
+    <div class="item slides">
+      <div class="slide-2"></div>
+      <div class="hero">
+        <hgroup>
+            <h1>Гарантия качества!</h1>
+            <h3>Только гарантированно высшие сорта мёда, без добавления примесей и разбавления оригинального продукта.</h3>
+        </hgroup>
+      </div>
+    </div>
+    <div class="item slides">
+      <div class="slide-3"></div>
+      <div class="hero">
+        <hgroup>
+            <h1>Лечебные свойства</h1>
+            <h3>Все лечебные свойства мёда остаются на месте, так как мёд не проходит различные технологические обработки. Только чистый продукт</h3>
+        </hgroup>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <div class="container">
+      <div class="row mar-b-50">
+        <div class="col-md-12">
+          <div class="text-center feature-head wow fadeInDown">
+            <h1 class="">
+              Добро пожаловать!
+            </h1>
+
+          </div>
+
+
+          <div class="feature-box">
+            <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
+              <div class="feature-box-heading">
+                <h4>
+                  <b>Экологически чистый мёд</b>
+                </h4>
+              </div>
+              <p class="text-center">
+                Проиизводство мёда в экологически чистом районе - Национальный парк "Самарская лука".
+              </p>
+            </div>
+            <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
+              <div class="feature-box-heading">
+                <h4>
+                  <b>Гарантия качества</b>
+                </h4>
+              </div>
+              <p class="text-center">
+                Все лечебные свойства мёда остаются на месте, так как мёд не проходит различные технологические обработки. Только чистый продукт.
+              </p>
+            </div>
+            <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
+              <div class="feature-box-heading">
+                <h4>
+                  <b>Лечебные свойства</b>
+                </h4>
+              </div>
+              <p class="text-center">
+                Все лечебные свойства мёда остаются на месте, так как мёд не проходит различные технологические обработки. Только чистый продукт.
+              </p>
+            </div>
+          </div>
+
+          <!--feature end-->
+        </div>
+      </div>
+    </div>
+
+
+    <!--property start-->
+    <div class="property gray-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 text-center wow fadeInLeft" >
+              <br>
+              <br>
+            <img src="{{ url_for ('static', filename='img/indeximage.jpg')}}" alt="">
+          </div>
+          <div class="col-lg-6 col-sm-6 wow fadeInRight">
+            <h1>
+              Наши сорта мёда:
+            </h1>
+            <hr>
+            <p>
+              <i class="fa fa-check fa-lg pr-10">
+              </i>
+                Польза липового меда. Чем полезен липовый мед?
+                Целебность меда обусловлена большим содержанием в нем
+                таких ферментов, как липаз, инвертаз, каталаз, пероксидаз и
+                диастаз. Кроме этого, состав липового меда богат витаминами
+                Е, К и группы В, каротином, а также многими полезными
+                микроэлементами.
+
+                Антибактериальные свойства меда помогают в лечении
+                болезней ЖКТ. Таким образом, он снимает воспаление и
+                улучшает состояние печени, желчного пузыря и почек. Кстати
+                липовый мед также полезен в качестве слабительного
+                средства. Но наибольшую ценность мед представляет для
+                людей с заболеваниями нервной и сердечнососудистой
+                систем, поскольку он снимает напряжение и стресс, улучшает
+                обменные процессы и помогает при бессоннице.
+            </p>
+            <p>
+              <i class="fa fa-check fa-lg pr-10">
+              </i>
+                Сегодня польза цветочного меда официально подтверждена
+                научными исследованиями, доказано, что он является
+                великолепным средством при лечении простудных заболеваний
+                и бессонницы. Этот вид меда способен быстро восстанавливать
+                силы. Также, мед советуют употреблять в пищу при заболеваниях пищеварительной,
+                дыхательной системы, сердечнососудистой недостаточности и
+                анемии.
+
+                Цветочный мед в народе заслужено считается средством
+                излечивающей сорок болезней. И это является неоспоримым
+                фактом, так как собирается он пчелами на разнотравье
+                различных природных зон. Он является настоящим природным
+                коктейлем способным поддержать организм человека при
+                любых непредвиденных сбоях.
+            </p>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--property end-->
+
+    <div class="container">
+
+      <div class="row mar-b-60">
+        <div class="col-lg-6">
+          <!--tab start-->
+          <section class="tab wow fadeInLeft">
+            <header class="panel-heading tab-bg-dark-navy-blue">
+              <ul class="nav nav-tabs nav-justified ">
+                <li class="active">
+                  <a data-toggle="tab" href="#news">
+                    Новости
+                  </a>
+                </li>
+                <li>
+                  <a data-toggle="tab" href="#events">
+                    События
+                  </a>
+                </li>
+                <li class="">
+                  <a data-toggle="tab" href="#notice-board">
+                    Объявления
+                  </a>
+                </li>
+              </ul>
+            </header>
+            <div class="panel-body">
+              <div class="tab-content tasi-tab">
+                <div id="news" class="tab-pane fade in active">
+                  <article class="media">
+                    <a class="pull-left thumb p-thumb">
+                      <img src="{{ url_for ('static', filename='img/product1.jpg')}}" alt="">
+                    </a>
+                    <div class="media-body b-btm">
+                      <a href="#" class=" p-head">
+                        Первая новость
+                      </a>
+                      <p>
+                        Содержание первой новости
+                      </p>
+                    </div>
+                  </article>
+                  <article class="media">
+                    <a class="pull-left thumb p-thumb">
+                      <img src="{{ url_for ('static', filename='img/product2.jpg')}}" alt="">
+                    </a>
+                    <div class="media-body b-btm">
+                      <a href="#" class=" p-head">
+                        Вторая новость
+                      </a>
+                      <p>
+                        Содержание второй новости
+                      </p>
+                    </div>
+                  </article>
+                  <article class="media">
+                    <a class="pull-left thumb p-thumb">
+                      <img src="{{ url_for ('static', filename='img/product1.jpg')}}" alt="">
+                    </a>
+                    <div class="media-body b-btm">
+                      <a href="#" class=" p-head">
+                        Третья новость
+                      </a>
+                      <p>
+                        Содержание третьей новости
+                      </p>
+                    </div>
+                  </article>
+                </div>
+                <div id="events" class="tab-pane fade">
+                  <article class="media">
+                    <a class="pull-left thumb p-thumb">
+                      <!--image goes here-->
+                    </a>
+                    <div class="media-body b-btm">
+                      <a href="#" class="cmt-head">
+                        Начало продажи липового мёда
+                      </a>
+                      <p>
+
+                        <i class="fa fa-time">
+                        </i>
+                        1 час назад
+                      </p>
+                    </div>
+                  </article>
+                  <article class="media">
+                    <a class="pull-left thumb p-thumb">
+                      <!--image goes here-->
+                    </a>
+                    <div class="media-body b-btm">
+                      <a href="#" class="cmt-head">
+                        Начало продаж майского мёда
+                      </a>
+                      <p>
+
+                        <i class="fa fa-time">
+                        </i>
+                        23 минуты назад
+                      </p>
+                    </div>
+                  </article>
+                  <article class="media">
+                    <a class="pull-left thumb p-thumb">
+                      <!--image goes here-->
+                    </a>
+                    <div class="media-body b-btm">
+                      <a href="#" class="cmt-head">
+                        Подготовительные работы
+                      </a>
+                      <p>
+
+                        <i class="fa fa-time">
+                        </i>
+                        15 минут назад
+                      </p>
+                    </div>
+                  </article>
+                </div>
+                <div id="notice-board" class="tab-pane fade">
+                  <p>
+                    В ближайшее время планируется старт продаж майского мёда.
+                  </p>
+                  <p>
+                    За последними новостями следите на сайте.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--tab end-->
+        </div>
+        <div class="col-lg-6">
+          <!--testimonial start-->
+          <div class="about-testimonial boxed-style about-flexslider ">
+            <section class="slider wow fadeInRight">
+              <div class="flexslider">
+                <ul class="slides about-flex-slides">
+                  <li>
+                    <div class="about-testimonial-image ">
+                      <img alt="" src="{{ url_for ('static', filename='img/person_1.png')}}">
+                    </div>
+                    <a class="about-testimonial-author" href="#">
+                      Мацукевич Роман
+                    </a>
+                    <span class="about-testimonial-company">
+                      Генеральный директор
+                    </span>
+                    <div class="about-testimonial-content">
+                      <p class="about-testimonial-quote">
+                        Производство мёда - для меня это не просто работа, это призвание. Любить свою работу и получать от неё удовольствие, по истине редкое сочетание, мне повезло.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="about-testimonial-image ">
+                      <img alt="" src="{{ url_for ('static', filename='img/person_2.png')}}">
+                    </div>
+                    <a class="about-testimonial-author" href="#">
+                      Мацукевич Анна
+                    </a>
+                    <span class="about-testimonial-company">
+                      Руководитель отдела продаж
+                    </span>
+                    <div class="about-testimonial-content">
+                      <p class="about-testimonial-quote">
+                        Работа на чистом воздухе в заповедной зоне "Самарская лука" отличается от работы. Редкое сочетание работы и отдыха в одном месте и уютной атмосфере.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <!--testimonial end-->
+        </div>
+        </div>
+      </div>
+    <!-- service end -->
+    <div class="hr">
+      <span class="hr-inner"></span>
+    </div>
+    <!--footer start-->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-sm-3 address wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
+            <h1>
+              Контактная информация
+            </h1>
+            <address>
+              <p><i class="fa fa-home pr-10"></i>Адрес: </p>
+              <p><i class="fa fa-globe pr-10"></i>Россия, Национальный парк "Самарская Лука" </p>
+              <p><i class="fa fa-phone pr-10"></i>Телефон : +7 927 210 28 17 </p>
+              <p><i class="fa fa-envelope pr-10"></i>Email :   <a href="">goodmed@gmail.com</a></p>
+            </address>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
+              <h1>
+                Наша компания
+              </h1>
+              <ul class="page-footer-list">
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="/">Главная</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="/med">Наш мёд</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="/ferma">Медовая ферма</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="/contacts">Контакты</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="/about">О компании</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <div class="text-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".7s">
+              <h1>
+                Медовая ферма
+              </h1>
+              <p>
+                Розничная продажа качественного мёда, продуктов пчеловодства и разнообразных товаров для Вашего здоровья
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+    <!--small footer start -->
+    <footer class="footer-small">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 pull-right">
+                    <ul class="social-link-footer list-unstyled">
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".1s"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".2s"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".5s"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".6s"><a href="#"><i class="fa fa-skype"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".8s"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                  <div class="copyright">
+                    <p>&copy; Copyright - Macukevich & CO.</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--small footer end-->
+
+    <!-- js placed at the end of the document so the pages load faster
+<script src="js/jquery.js">
+</script>
+-->
+    <script src="{{ url_for ('static', filename='js/jquery-1.8.3.min.js')}}">
+    </script>
+    <script src="{{ url_for ('static', filename='js/bootstrap.min.js')}}">
+    </script>
+    <script type="text/javascript" src="{{ url_for ('static', filename='js/hover-dropdown.js')}}">
+    </script>
+    <script defer src="{{ url_for ('static', filename='js/jquery.flexslider.js')}}">
+    </script>
+    <script type="text/javascript" src="{{ url_for ('static', filename='assets/bxslider/jquery.bxslider.js')}}">
+    </script>
+
+    <script type="text/javascript" src="{{ url_for ('static', filename='js/jquery.parallax-1.1.3.js')}}">
+    </script>
+    <script src="{{ url_for ('static', filename='js/wow.min.js')}}">
+    </script>
+    <script src="{{ url_for ('static', filename='assets/owlcarousel/owl.carousel.js')}}">
+    </script>
+
+    <script src="{{ url_for ('static', filename='js/jquery.easing.min.js')}}">
+    </script>
+    <script src="{{ url_for ('static', filename='js/link-hover.js')}}">
+    </script>
+    <script src="{{ url_for ('static', filename='js/superfish.js')}}">
+    </script>
+    <script type="text/javascript" src="{{ url_for ('static', filename='js/parallax-slider/jquery.cslider.js')}}">
+    </script>
+    <script type="text/javascript">
+      $(function() {
+
+        $('#da-slider').cslider({
+          autoplay    : true,
+          bgincrement : 100
+        });
+
+      });
+    </script>
+
+
+
+    <!--common script for all pages-->
+    <script src="{{ url_for ('static', filename='js/common-scripts.js')}}">
+    </script>
+
+    <script type="text/javascript">
+      jQuery(document).ready(function() {
+
+
+        $('.bxslider1').bxSlider({
+          minSlides: 5,
+          maxSlides: 6,
+          slideWidth: 360,
+          slideMargin: 2,
+          moveSlides: 1,
+          responsive: true,
+          nextSelector: '#slider-next',
+          prevSelector: '#slider-prev',
+          nextText: 'Onward →',
+          prevText: '← Go back'
+        });
+
+      });
+
+
+    </script>
+
+
+    <script>
+      $('a.info').tooltip();
+
+      $(window).load(function() {
+        $('.flexslider').flexslider({
+          animation: "slide",
+          start: function(slider) {
+            $('body').removeClass('loading');
+          }
+        });
+      });
+
+      $(document).ready(function() {
+
+        $("#owl-demo").owlCarousel({
+
+          items : 4
+
+        });
+
+      });
+
+      jQuery(document).ready(function(){
+        jQuery('ul.superfish').superfish();
+      });
+
+      new WOW().init();
+
+
+    </script>
+  </body>
+</html>

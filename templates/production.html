@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for ('static', filename='img/favicon.png')}}">
+
+    <title>Медовая ферма</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for ('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ url_for ('static', filename='css/theme.css')}}" rel="stylesheet">
+    <link href="{{ url_for ('static', filename='css/bootstrap-reset.css')}}" rel="stylesheet">
+    <!--external css-->
+    <link href="{{ url_for ('static', filename='assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/flexslider.css')}}"/>
+    <link href="{{ url_for ('static', filename='assets/bxslider/jquery.bxslider.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/animate.css')}}">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for ('static', filename='css/style.css')}}" rel="stylesheet">
+    <link href="{{ url_for ('static', filename='css/style-responsive.css')}}" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+<script src="{{ url_for ('static', filename='js/html5shiv.js')}}">
+</script>
+<script src="{{ url_for ('static', filename='js/respond.min.js')}}">
+</script>
+<![endif]-->
+  </head>
+
+  <body>
+    <br>
+    <!--breadcrumbs start-->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-4">
+                    <h1>Медовая ферма</h1>
+                </div>
+                <div class="col-lg-8 col-sm-8">
+                    <ol class="breadcrumb pull-right">
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/med">Наш мёд</a></li>
+                        <li><a href="/ferma">Медовая ферма</a></li>
+                        <li><a href="/about">О компании</a></li>
+                        <li><a href="/korzina">Корзина <img src="{{ url_for ('static', filename='img/cart.png')}}" href="/korzina" alt=""></a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+    <!--container start-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="blog-left wow fadeInLeft">
+            <div class="blog-img">
+              <img src="{{ url_for ('static', filename='img/med_cvetok.jpg')}}" alt=""/>
+            </div>
+                <div class="blog-content">
+                  <h3>
+                    Цветочный мёд
+                  </h3>
+                  <p>
+                    Польза липового меда. Чем полезен липовый мед?
+                    Целебность меда обусловлена большим содержанием в нем
+                    таких ферментов, как липаз, инвертаз, каталаз, пероксидаз и
+                    диастаз. Кроме этого, состав липового меда богат витаминами
+                    Е, К и группы В, каротином, а также многими полезными
+                    микроэлементами.
+                    Антибактериальные свойства меда помогают в лечении
+                    болезней ЖКТ. Таким образом, он снимает воспаление и
+                    улучшает состояние печени, желчного пузыря и почек. Кстати
+                    липовый мед также полезен в качестве слабительного
+                    средства. Но наибольшую ценность мед представляет для
+                    людей с заболеваниями нервной и сердечнососудистой
+                    систем, поскольку он снимает напряжение и стресс, улучшает
+                    обменные процессы и помогает при бессоннице.
+                    Очень часто липовый мед используют как безотказное
+                    лекарство от простуды, поскольку он обладает сильным
+                    жаропонижающим, противовоспалительным и потогонным
+                    действием.
+                  </p>
+                    <button type="submit" class="btn btn-primary pull-right">Добавить в корзину</button>
+                    <br>
+                </div>
+          </div>
+          </div>
+          <div class="col-md-6">
+
+            <div class="blog-right wow fadeInRight">
+              <div class="blog-img">
+                <img src="{{ url_for ('static', filename='img/med_lipa.jpg')}}" alt=""/>
+              </div>
+              <div class="blog-content">
+                <h3>
+                  Липовый мёд
+                </h3>
+                <p>
+                  Сегодня польза цветочного меда официально подтверждена
+                  научными исследованиями, доказано, что он является
+                  великолепным средством при лечении простудных заболеваний
+                  и бессонницы. Этот вид меда способен быстро восстанавливать
+                  силы, поэтому он полезен людям, перенесшим сложные
+                  заболевания. Его успокоительные свойства используются при
+                  лечении психических расстройств. Также, мед советуют
+                  употреблять в пищу при заболеваниях пищеварительной,
+                  дыхательной системы, сердечнососудистой недостаточности и
+                  анемии.
+                  Цветочный мед в народе заслужено считается средством
+                  излечивающей сорок болезней. И это является неоспоримым
+                  фактом, так как собирается он пчелами на разнотравье
+                  различных природных зон. Он является настоящим природным
+                  коктейлем способным поддержать организм человека при
+                  любых непредвиденных сбоях.
+                </p>
+                  <br>
+                  <button type="submit" class="btn btn-primary pull-right">Добавить в корзину</button>
+                  <br>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!--container end-->
+
+    <!--footer start-->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-sm-3 address wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
+            <h1>
+              Контактная информация
+            </h1>
+            <address>
+              <p><i class="fa fa-home pr-10"></i>Адресс: </p>
+              <p><i class="fa fa-globe pr-10"></i>Россия, Национальный парк "Самарская Лука" </p>
+              <p><i class="fa fa-phone pr-10"></i>Phone : +7 927 210 28 17 </p>
+              <p><i class="fa fa-envelope pr-10"></i>Email :   <a href="">goodmed@gmail.com</a></p>
+            </address>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
+              <h1>
+                Наша компания
+              </h1>
+              <ul class="page-footer-list">
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="/">Главная</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="/med">Наш мёд</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="/ferma">Медовая ферма</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="/contacts">Контакты</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="/about">О компании</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <div class="text-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".7s">
+              <h1>
+                Медовая ферма
+              </h1>
+              <p>
+                Розничная продажа качественного мёда, продуктов пчеловодства и разнообразных товаров для Вашего здоровья
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+    <!--small footer start -->
+    <footer class="footer-small">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 pull-right">
+                    <ul class="social-link-footer list-unstyled">
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".1s"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".2s"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".5s"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".6s"><a href="#"><i class="fa fa-skype"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".8s"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                  <div class="copyright">
+                    <p>&copy; Copyright - Macukevich & CO.</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--small footer end-->
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for ('static', filename='js/jquery.js')}}">
+    </script>
+    <script src="{{ url_for ('static', filename='js/bootstrap.min.js')}}">
+    </script>
+    <script type="text/javascript" src="{{ url_for ('static', filename='js/hover-dropdown.js')}}">
+    </script>
+    <script defer src="{{ url_for ('static', filename='js/jquery.flexslider.js')}}">
+    </script>
+    <script type="text/javascript" src="{{ url_for ('static', filename='assets/bxslider/jquery.bxslider.js')}}">
+    </script>
+
+    <script src="{{ url_for ('static', filename='js/jquery.easing.min.js')}}">
+    </script>
+    <script src="{{ url_for ('static', filename='js/link-hover.js')}}">
+    </script>
+
+
+    <!--common script for all pages-->
+    <script src="{{ url_for ('static', filename='js/common-scripts.js')}}">
+    </script>
+
+
+    <script src="{{ url_for ('static', filename='js/wow.min.js')}}">
+    </script>
+    <script>
+      wow = new WOW(
+        {
+          boxClass:     'wow',      // default
+          animateClass: 'animated', // default
+          offset:       0          // default
+        }
+      );
+        wow.init();
+    </script>
+
+  </body>
+</html>
