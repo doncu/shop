@@ -10,7 +10,7 @@ app.config.from_object('config')
 admin = Admin(
     app,
     name='admin',
-    index_view=index.AdminIndexView(),
+    index_view=index.AdminIndexView(url='/admin/'),
     base_template='admin/master.html',
     template_mode='bootstrap3'
 )

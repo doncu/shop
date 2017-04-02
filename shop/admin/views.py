@@ -44,21 +44,21 @@ def logout():
     return redirect(url_for('login'))
 
 
-@base.register('Security', 'User', '/users', 'users')
+@base.register(None, 'User', '/admin/users/', 'admin.user')
 class UserView(base.AdminModelView):
     __model__ = admin_models.User
     column_list = ('username', 'is_admin')
-    form_columns = ('username', 'is_admin', 'password')
+    form_columns = ('username', 'password', 'is_admin')
 
     form_overrides = dict(username=wtforms.StringField, is_admin=wtforms.BooleanField, password=wtforms.PasswordField)
-    column_default_sort = ('username', )
+    column_default_sort = ('username', None)
 
 
-@base.register('Production', 'Production', '/production', 'production')
-class UserView(base.AdminModelView):
+@base.register(None, 'Production', '/admin/productions/', 'admin.production')
+class ProductionViews(base.AdminModelView):
     __model__ = models.Production
 
 
-@base.register('News', 'News', '/news', 'news')
-class UserView(base.AdminModelView):
+@base.register(None, 'News', '/admin/news/', 'admin.news')
+class NewsView(base.AdminModelView):
     __model__ = models.News

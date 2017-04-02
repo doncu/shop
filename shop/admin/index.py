@@ -10,4 +10,4 @@ class AdminIndexView(flask_admin.AdminIndexView):
     def index(self):
         if not current_user.is_authenticated:
             return redirect(url_for('login'))
-        return self.render('index.html')
+        return super().index()

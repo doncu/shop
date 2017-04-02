@@ -49,11 +49,11 @@
                 </div>
                 <div class="col-lg-8 col-sm-8">
                     <ol class="breadcrumb pull-right">
-                        <li><a href="/">Главная</a></li>
-                        <li><a href="/med">Наш мёд</a></li>
-                        <li><a href="/ferma">Медовая ферма</a></li>
-                        <li><a href="/about">О компании</a></li>
-                        <li><a href="/korzina">Корзина <img src="{{ url_for ('static', filename='img/cart.png')}}" href="/korzina" alt=""></a></li>
+                        <li><a href="{{ url_for('index') }}">Главная</a></li>
+                        <li><a href="{{ url_for('production') }}">Наш мёд</a></li>
+                        <li><a href="{{ url_for('farm') }}">Медовая ферма</a></li>
+                        <li><a href="{{ url_for('about') }}">О компании</a></li>
+                        <li><a href="{{ url_for('basket') }}">Корзина <img src="{{ url_for ('static', filename='img/cart.png')}}" alt=""></a></li>
                     </ol>
                 </div>
             </div>
@@ -167,10 +167,6 @@
                 <li>
                   <i class="fa fa-angle-right"></i>
                   <a href="#">Медовая ферма</a>
-                </li>
-                <li>
-                  <i class="fa fa-angle-right"></i>
-                  <a href="/contacts">Контакты</a>
                 </li>
                 <li>
                   <i class="fa fa-angle-right"></i>

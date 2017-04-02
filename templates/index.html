@@ -52,20 +52,18 @@
           <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                   <li>
-                      <a href="/">Главная</a>
+                      <a href="{{ url_for('index') }}">Главная</a>
                   </li>
                   <li>
-                      <a href="/med">Наш мёд</a>
+                      <a href="{{ url_for('production') }}">Наш мёд</a>
                   </li>
                   <li>
-                      <a href="/ferma">Медовая ферма</a>
+                      <a href="{{ url_for('farm') }}">Медовая ферма</a>
                   </li>
                   <li>
-                      <a href="/contacts">Контакты</a>
+                      <a href="{{ url_for('about') }}">О компании</a>
                   </li>
-                  <li>
-                      <a href="/about">О компании</a>
-                  </li>
+                  <li><a href="{{ url_for('basket') }}">Корзина <img src="{{ url_for ('static', filename='img/cart.png')}}" href="/korzina" alt=""></a></li>
               </ul>
           </div>
       </div>
