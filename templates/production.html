@@ -152,23 +152,23 @@
               <ul class="page-footer-list">
                 <li>
                   <i class="fa fa-angle-right"></i>
-                  <a href="/">Главная</a>
+                  <a href="{{ url_for('index') }}">Главная</a>
                 </li>
                 <li>
                   <i class="fa fa-angle-right"></i>
-                  <a href="/med">Наш мёд</a>
+                  <a href="{{ url_for('production') }}">Наш мёд</a>
                 </li>
                 <li>
                   <i class="fa fa-angle-right"></i>
-                  <a href="/ferma">Медовая ферма</a>
+                  <a href="{{ url_for('farm') }}">Медовая ферма</a>
                 </li>
                 <li>
                   <i class="fa fa-angle-right"></i>
-                  <a href="/contacts">Контакты</a>
+                  <a href="{{ url_for('about') }}">Контакты</a>
                 </li>
                 <li>
                   <i class="fa fa-angle-right"></i>
-                  <a href="/about">О компании</a>
+                  <a href="{{ url_for('basket') }}">О компании</a>
                 </li>
               </ul>
             </div>

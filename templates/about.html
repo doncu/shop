@@ -8,9 +8,7 @@
     <meta name="keywords" content="Bootstrap 3, Template, Theme, Responsive, Corporate, Business">
     <link rel="shortcut icon" href="{{ url_for ('static', filename='img/favicon.png')}}">
 
-    <title>
-      Acme | Home
-    </title>
+    <title>Наша компания</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for ('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
@@ -390,7 +388,11 @@
                 </li>
                 <li>
                   <i class="fa fa-angle-right"></i>
-                  <a href="{{ url_for('about') }}">О компании</a>
+                  <a href="{{ url_for('about') }}">Контакты</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="{{ url_for('basket') }}">О компании</a>
                 </li>
               </ul>
             </div>

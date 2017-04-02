@@ -7,7 +7,7 @@
     <meta name="author" content="rokib">
     <meta name="keywords" content="Bootstrap 3, Template, Theme, Responsive, Corporate, Business">
     <link rel="shortcut icon" href="{{ url_for ('static', filename='img/favicon.png')}}">
-    <title>Acme | Home</title>
+    <title>Наша ферма</title>
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for ('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{ url_for ('static', filename='css/theme.css')}}" rel="stylesheet">
@@ -249,23 +249,23 @@
               <ul class="page-footer-list">
                 <li>
                   <i class="fa fa-angle-right"></i>
-                  <a href="/">Главная</a>
+                  <a href="{{ url_for('index') }}">Главная</a>
                 </li>
                 <li>
                   <i class="fa fa-angle-right"></i>
-                  <a href="/med">Наш мёд</a>
+                  <a href="{{ url_for('production') }}">Наш мёд</a>
                 </li>
                 <li>
                   <i class="fa fa-angle-right"></i>
-                  <a href="/ferma">Медовая ферма</a>
+                  <a href="{{ url_for('farm') }}">Медовая ферма</a>
                 </li>
                 <li>
                   <i class="fa fa-angle-right"></i>
-                  <a href="/contacts">Контакты</a>
+                  <a href="{{ url_for('about') }}">Контакты</a>
                 </li>
                 <li>
                   <i class="fa fa-angle-right"></i>
-                  <a href="/about">О компании</a>
+                  <a href="{{ url_for('basket') }}">О компании</a>
                 </li>
               </ul>
             </div>

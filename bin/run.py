@@ -31,5 +31,6 @@ if __name__ == '__main__':
     import sys
     '.' not in sys.path and sys.path.insert(0, '.')
 
+
     from shop.app import app
     app.run(debug=args.debug, port=args.port, host=args.host, threaded=True)
