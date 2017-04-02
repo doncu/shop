@@ -236,11 +236,6 @@
                     Новости
                   </a>
                 </li>
-                <li>
-                  <a data-toggle="tab" href="#events">
-                    События
-                  </a>
-                </li>
                 <li class="">
                   <a data-toggle="tab" href="#notice-board">
                     Объявления
@@ -251,95 +246,17 @@
             <div class="panel-body">
               <div class="tab-content tasi-tab">
                 <div id="news" class="tab-pane fade in active">
-                  <article class="media">
-                    <a class="pull-left thumb p-thumb">
-                      <img src="{{ url_for ('static', filename='img/product1.jpg')}}" alt="">
-                    </a>
-                    <div class="media-body b-btm">
-                      <a href="#" class=" p-head">
-                        Первая новость
+                  {% for item in news %}
+                    <article class="media">
+                      <a class="pull-left thumb p-thumb">
+                        <img src="{{ url_for ('image', filename=item.img_url)}}" alt="">
                       </a>
-                      <p>
-                        Содержание первой новости
-                      </p>
-                    </div>
-                  </article>
-                  <article class="media">
-                    <a class="pull-left thumb p-thumb">
-                      <img src="{{ url_for ('static', filename='img/product2.jpg')}}" alt="">
-                    </a>
-                    <div class="media-body b-btm">
-                      <a href="#" class=" p-head">
-                        Вторая новость
-                      </a>
-                      <p>
-                        Содержание второй новости
-                      </p>
-                    </div>
-                  </article>
-                  <article class="media">
-                    <a class="pull-left thumb p-thumb">
-                      <img src="{{ url_for ('static', filename='img/product1.jpg')}}" alt="">
-                    </a>
-                    <div class="media-body b-btm">
-                      <a href="#" class=" p-head">
-                        Третья новость
-                      </a>
-                      <p>
-                        Содержание третьей новости
-                      </p>
-                    </div>
-                  </article>
-                </div>
-                <div id="events" class="tab-pane fade">
-                  <article class="media">
-                    <a class="pull-left thumb p-thumb">
-                      <!--image goes here-->
-                    </a>
-                    <div class="media-body b-btm">
-                      <a href="#" class="cmt-head">
-                        Начало продажи липового мёда
-                      </a>
-                      <p>
-
-                        <i class="fa fa-time">
-                        </i>
-                        1 час назад
-                      </p>
-                    </div>
-                  </article>
-                  <article class="media">
-                    <a class="pull-left thumb p-thumb">
-                      <!--image goes here-->
-                    </a>
-                    <div class="media-body b-btm">
-                      <a href="#" class="cmt-head">
-                        Начало продаж майского мёда
-                      </a>
-                      <p>
-
-                        <i class="fa fa-time">
-                        </i>
-                        23 минуты назад
-                      </p>
-                    </div>
-                  </article>
-                  <article class="media">
-                    <a class="pull-left thumb p-thumb">
-                      <!--image goes here-->
-                    </a>
-                    <div class="media-body b-btm">
-                      <a href="#" class="cmt-head">
-                        Подготовительные работы
-                      </a>
-                      <p>
-
-                        <i class="fa fa-time">
-                        </i>
-                        15 минут назад
-                      </p>
-                    </div>
-                  </article>
+                      <div class="media-body b-btm">
+                        <a href="#" class=" p-head">{{ item.title }}</a>
+                        <p>{{ item.annotation }}</p>
+                        </div>
+                    </article>
+                  {% endfor %}
                 </div>
                 <div id="notice-board" class="tab-pane fade">
                   <p>
