@@ -66,7 +66,7 @@
               <div class="blog-content">
                 <h3>{{ item.title }}</h3>
                 <p>{{ item.description }}</p>
-                <button type="submit" class="btn btn-primary pull-right">Добавить в корзину</button>
+                <button type="submit" class="btn btn-primary pull-right basket-add" data-id="{{ item.id }}">Добавить в корзину</button>
                 <br />
               </div>
           </div>
@@ -179,7 +179,6 @@
     <script src="{{ url_for ('static', filename='js/common-scripts.js')}}">
     </script>
 
-
     <script src="{{ url_for ('static', filename='js/wow.min.js')}}">
     </script>
     <script>
@@ -191,6 +190,14 @@
         }
       );
         wow.init();
+    </script>
+    <script>
+        $(function() {
+            $('.basket-add').on('click', function() {
+                var id = $(this).data('id');
+                $.post('/basket/add/', {id: id});
+            })
+        })
     </script>
 
   </body>
