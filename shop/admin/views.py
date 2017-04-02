@@ -8,7 +8,11 @@ from flask_login import login_user
 from flask_login import logout_user
 from flask_login import LoginManager
 
+from flask_admin.form import upload
+
 import wtforms
+
+import config
 
 from shop.app import app
 from shop import models
@@ -58,7 +62,24 @@ class UserView(base.AdminModelView):
 class ProductionViews(base.AdminModelView):
     __model__ = models.Production
 
+    column_list = ('title', 'price', 'description', )
+
+    form_overrides = dict(title=wtforms.StringField, price=wtforms.DecimalField)
+    form_extra_fields = dict(img_url=upload.ImageUploadField(base_path=config.IMG_PATH, endpoint='image'))
+
 
 @base.register(None, 'News', '/admin/news/', 'admin.news')
 class NewsView(base.AdminModelView):
     __model__ = models.News
+
+    form_columns = ('title', 'annotation', 'img_url')
+    column_list = ('title', 'annotation', 'ctime')
+
+    form_overrides = dict(
+        title=wtforms.StringField,
+        annotation=wtforms.StringField,
+    )
+
+    form_extra_fields = dict(img_url=upload.ImageUploadField(base_path=config.IMG_PATH, endpoint='image'))
+
+    column_default_sort = ('ctime', True)
