@@ -72,24 +72,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Цветочный</td>
-                  <td>350 р.</td>
-                  <td>1400 р.</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Липовый</td>
-                  <td>350 р.</td>
-                  <td>700 р.</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Цветочный</td>
-                  <td>350 р.</td>
-                  <td>1750 р.</td>
-                </tr>
+                {% for obj, count in basket %}
+                  <tr>
+                    <th scope="row">{{ count }}</th>
+                    <td>{{ obj.title }}</td>
+                    <td>{{ obj.price }} руб.</td>
+                    <td>{{ obj.price * count }} руб.</td>
+                  </tr>
+                {% endfor %}
               </tbody>
           </table>
           </div>
@@ -98,7 +88,7 @@
             Данные для оформления заказа
           </h4>
           <div class="contact-form">
-            <form role="form">
+            <form role="form" method="post">
               <div class="form-group">
                 <label for="name">
                   Имя
@@ -118,11 +108,10 @@
                 <input type="text" id="phone" class="form-control">
               </div>
               <div class="form-group">
-                <label for="phone">
+                <label for="description">
                   Сообщение
                 </label>
-                <textarea placeholder="" rows="5" class="form-control">
-                </textarea>
+                <textarea id="description" name="description" placeholder="" rows="5" class="form-control"></textarea>
               </div>
               <button class="btn btn-info" type="submit">
                 Оформить заказ

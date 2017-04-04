@@ -1,10 +1,16 @@
 from telegram.ext import Updater, CommandHandler
 
+import config
+
 
 def help(bot, update):
     update.message.reply_text('Всё что я умею это отправлять инфу о заказах в чат.')
 
-updater = Updater('354109767:AAHmro-KA9B2NHgymuIzr-vXxGIV8cMDgyo')
+
+def send_message(name, email, phone, description, basket):
+    pass
+
+updater = Updater(config.TELEGRAM_BOT_KEY)
 updater.dispatcher.add_handler(CommandHandler('help', help))
 updater.start_polling()
 updater.idle()
