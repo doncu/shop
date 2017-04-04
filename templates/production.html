@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="{{ url_for ('static', filename='css/animate.css')}}">
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
-
     <!-- Custom styles for this template -->
     <link href="{{ url_for ('static', filename='css/style.css')}}" rel="stylesheet">
     <link href="{{ url_for ('static', filename='css/style-responsive.css')}}" rel="stylesheet" />
@@ -66,8 +65,23 @@
               <div class="blog-content">
                 <h3>{{ item.title }}</h3>
                 <p>{{ item.description }}</p>
-                <button type="submit" class="btn btn-primary pull-right">Добавить в корзину</button>
-                <br />
+                  <div class="Purchase" style="margin-top: 5%; margin-bottom: 5%">
+                      <div class="col-xs-5 col-xs-offset-5" style="margin-left: 35%; padding-right: 0; width: 30%">
+                          <div class="input-group number-spinner">
+                              <span class="input-group-btn">
+                                  <button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+                              </span>
+                              <input type="text" class="form-control text-center" value="1" style="width: 180%">
+                              <span class="input-group-btn">
+                                  <button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+                              </span>
+                          </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary pull-right" style="margin-left: 0;">Добавить в корзину</button>
+                  </div>
+                <br>
+                <br>
+                <br>
               </div>
           </div>
           </div>
@@ -158,30 +172,24 @@
     <!--small footer end-->
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="{{ url_for ('static', filename='js/jquery.js')}}">
-    </script>
-    <script src="{{ url_for ('static', filename='js/bootstrap.min.js')}}">
-    </script>
-    <script type="text/javascript" src="{{ url_for ('static', filename='js/hover-dropdown.js')}}">
-    </script>
-    <script defer src="{{ url_for ('static', filename='js/jquery.flexslider.js')}}">
-    </script>
+    <script src="{{ url_for ('static', filename='js/jquery.js')}}"></script>
+    <script src="{{ url_for ('static', filename='js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for ('static', filename='js/hover-dropdown.js')}}"></script>
+    <script defer src="{{ url_for ('static', filename='js/jquery.flexslider.js')}}"></script>
     <script type="text/javascript" src="{{ url_for ('static', filename='assets/bxslider/jquery.bxslider.js')}}">
     </script>
 
-    <script src="{{ url_for ('static', filename='js/jquery.easing.min.js')}}">
-    </script>
-    <script src="{{ url_for ('static', filename='js/link-hover.js')}}">
-    </script>
+    <script src="{{ url_for ('static', filename='js/jquery.easing.min.js')}}"></script>
+    <script src="{{ url_for ('static', filename='js/link-hover.js')}}"></script>
+    <script src="{{ url_for ('static', filename='js/custombutton.js')}}"></script>
+
 
 
     <!--common script for all pages-->
-    <script src="{{ url_for ('static', filename='js/common-scripts.js')}}">
-    </script>
+    <script src="{{ url_for ('static', filename='js/common-scripts.js')}}"></script>
 
 
-    <script src="{{ url_for ('static', filename='js/wow.min.js')}}">
-    </script>
+    <script src="{{ url_for ('static', filename='js/wow.min.js')}}"></script>
     <script>
       wow = new WOW(
         {
