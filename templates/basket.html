@@ -59,34 +59,56 @@
     </div>
     <!--breadcrumbs end-->
 
-  <div class="container">
-    <div class="row">
-        <div class="col-md-5 col-sm-5 address">
-          <table class="table table-responsive">
-              <thead class="thead-inverse">
-                <tr>
-                  <th>Количество</th>
-                  <th>Название мёда</th>
-                  <th>Стоимость 1 ед товара</th>
-                  <th>Общая сумма</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for obj, count in basket %}
-                  <tr>
-                    <th scope="row">{{ count }}</th>
-                    <td>{{ obj.title }}</td>
-                    <td>{{ obj.price }} руб.</td>
-                    <td>{{ obj.price * count }} руб.</td>
-                  </tr>
-                {% endfor %}
-              </tbody>
-          </table>
-          </div>
-        <div class="col-md-6 col-sm-6 address">
-          <h4>
-            Данные для оформления заказа
-          </h4>
+    <div class="my_row" style="margin: 3%;">
+        <div class="col-md-6 col-sm-5 address">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Количество</th>
+                                <th>Мёда</th>
+                                <th>Стоимость 1 ед товара</th>
+                                <th>Общая сумма</th>
+                                <th>Изменить количество</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for obj, count in basket %}
+                              <tr>
+                                <td>{{ count }}</td>
+                                <td>{{ obj.title }}</td>
+                                <td>{{ obj.price }} руб.</td>
+                                <td>{{ obj.price * count }} руб.</td>
+                              </tr>
+                            {% endfor %}
+                            <!-- Тестовая запись -->
+                                <tr>
+                                    <td>4</td>
+                                    <td>Цветочный</td>
+                                    <td>350 р.</td>
+                                    <td>1400 р.</td>
+                                    <td>
+                                        <div class="col-xs-5 col-xs-offset-5">
+                                          <div class="input-group number-spinner">
+                                              <span class="input-group-btn">
+                                                  <button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+                                              </span>
+                                              <input type="text" class="form-control text-center" value="1" style="width: 160%; margin-left: -22%; font-size: 12px">
+                                              <span class="input-group-btn">
+                                                  <button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+                                              </span>
+                                          </div>
+                                      </div>
+                                    <td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 col-sm-4 address" style="margin: 0">
+          <div class="my_h" style="text-align: center"><h4>Данные для оформления заказа</h4></div>
           <div class="contact-form">
             <form role="form" method="post">
               <div class="form-group">
@@ -113,14 +135,12 @@
                 </label>
                 <textarea id="description" name="description" placeholder="" rows="5" class="form-control"></textarea>
               </div>
-              <button class="btn btn-info" type="submit">
-                Оформить заказ
-              </button>
+              <button class="btn btn-info" type="submit">Оформить заказ</button>
             </form>
           </div>
         </div>
-    </div>
-  </div>
+
+
     <br>
     <br>
     <!--footer start-->
@@ -211,6 +231,7 @@
     </script>
     <script type="text/javascript" src="{{ url_for ('static', filename='js/hover-dropdown.js')}}">
     </script>
+    <script src="{{ url_for ('static', filename='js/custombutton.js')}}"></script>
     <script type="text/javascript" src="{{ url_for ('static', filename='assets/bxslider/jquery.bxslider.js')}}">
     </script>
 
