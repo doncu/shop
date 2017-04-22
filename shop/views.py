@@ -81,7 +81,7 @@ def production_view():
     return render_template('production.html', **data)
 
 
-@app.route('/img/<filename>/', endpoint='image')
+@app.route('/img/<filename>', endpoint='image')
 def image_view(filename):
     full_path = os.path.join(config.IMG_PATH, filename)
     type_ = imghdr.what(full_path)

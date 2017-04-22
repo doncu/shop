@@ -4,7 +4,7 @@ VENVPATH = $(shell pwd)/$(VENVNAME)
 
 GITVERSION = $(shell git rev-parse HEAD)
 
-REMOTE_SSH = root:lh8tA24V@mzhv.ru
+REMOTE_SSH = root@mzhv.ru
 
 
 make-venv:
