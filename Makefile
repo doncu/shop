@@ -32,4 +32,4 @@ create-venv: pack-venv clean
 
 upload-venv: create-venv
 	scp $(VENVPATH) $(REMOTE_SSH):/tmp/
-	ssh $(REMOTE_SSH) "tar -zxvf /tmp/$(VENVNAME) -C /root/venv_shop-$(GITVERSION); ln -s /root/venv_shop /root/venv_shop-$(GITVERSION)"
+	ssh $(REMOTE_SSH) "tar -zxvf /tmp/$(VENVNAME) -C /root/venv_shop-$(GITVERSION); ln -s /root/venv_shop /root/venv_shop-$(GITVERSION); supervisorctl reread; supervisorctl update; supervisorctl restart shop"
