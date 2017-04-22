@@ -4,7 +4,7 @@ BASE_PATH = os.path.abspath(os.path.dirname(__file__))
 TEMPLATE_PATH = os.path.abspath(os.path.join(BASE_PATH, 'templates'))
 STATIC_PATH = os.path.abspath(os.path.join(BASE_PATH, 'static'))
 
-IMG_PATH = os.path.join(BASE_PATH, 'images')
+IMG_PATH = os.environ.get('IMG_PATH', os.path.join(BASE_PATH, 'images'))
 
 DATABASE_URI = 'sqlite:///{}'.format(os.environ.get('DATABASE_URI', os.path.join(BASE_PATH, 'shop.db')))
 
