@@ -1,7 +1,10 @@
 BUILDDIR = /tmp/venv_shop
-VENVPATH = $(shell pwd)/venv_shop.tar.gz
+VENVNAME = venv_shop.tar.gz
+VENVPATH = $(shell pwd)/$(VENVNAME)
 
 GITVERSION = $(shell git rev-parse HEAD)
+
+REMOTE_SSH = root@mzhv.ru
 
 
 make-venv:
@@ -26,3 +29,7 @@ clean:
 	rm -rf $(BUILDDIR)
 
 create-venv: pack-venv clean
+
+upload-venv: create-venv
+	scp $(VENVPATH) $(REMOTE_SSH):/tmp/
+	ssh $(REMOTE_SSH) "tar -zxvf /tmp/$(VENVNAME) -C /root/venv_shop-$(GITVERSION); ln -s /root/venv_shop /root/venv_shop-$(GITVERSION)"
