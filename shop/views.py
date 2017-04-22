@@ -25,32 +25,41 @@ def index_view():
 
 class BasketView(views.MethodView):
 
-    def get_basket(self):
-        basket = session.get('basket', {})
-        result = []
-        if basket:
-            productions = dict(
+    def __prodactions(self, ids):
+        productions = dict(
                 db.session.query(
                     models.Production.id,
                     models.Production
-                ).filter(models.Production.id.in_(basket.keys()))
+                ).filter(models.Production.id.in_(ids))
             )
-            for item_id, item_count in basket.items():
-                result.append((productions[int(item_id)], item_count))
-        return result
+        return productions
 
     def get(self):
-        return render_template('basket.html', basket=self.get_basket())
+        basket = session.get('basket', {})
+        result = []
+        if basket:
+            productions = self.__prodactions(basket.keys())
+            result = []
+            for item_id, item_count in basket.items():
+                result.append((productions[int(item_id)], item_count))
+        return render_template('basket.html', basket=result)
 
     def post(self):
         name = request.form['name']
         email = request.form['email']
         phone = request.form['phone']
-        description = request.form['description']
-        basket = self.get_basket()
-        send_message(name, email, phone, description, basket)
+        description = request.form.get('description')
+        basket_form = request.form.getlist('production[]')
+        objects = list(map(lambda obj: obj.split('-'), basket_form))
+        productions = self.__prodactions(map(lambda obj: obj[0], objects))
+        basket = []
+        for item_id, item_count in objects:
+                basket.append((productions[int(item_id)], item_count))
+
+        if basket:
+            send_message(name, email, phone, description, basket)
         session.clear()
-        return redirect(url_for('index'))
+        return redirect(url_for('basket'))
 
 
 app.add_url_rule('/basket/', view_func=BasketView.as_view('basket'))
@@ -59,15 +68,10 @@ app.add_url_rule('/basket/', view_func=BasketView.as_view('basket'))
 @app.route('/basket/add/', methods=('POST', ))
 def basket_add():
     id_ = request.form.get('id', type=int)
+    count = request.form.get('count', type=int, default=1)
     if 'basket' not in session:
         session['basket'] = {}
-    session['basket'].setdefault(id_, 0)
-    session['basket'][id_] += 1
-    return 'OK'
-
-
-@app.route('/basket/send/', methods=('POST', ))
-def basket_send():
+    session['basket'][id_] = count
     return 'OK'
 
 

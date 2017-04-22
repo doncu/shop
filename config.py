@@ -6,7 +6,7 @@ STATIC_PATH = os.path.abspath(os.path.join(BASE_PATH, 'static'))
 
 IMG_PATH = os.path.join(BASE_PATH, 'images')
 
-DATABASE_URI = 'sqlite:///' + os.path.join(BASE_PATH, 'shop.db')
+DATABASE_URI = 'sqlite:///{}'.format(os.environ.get('DATABASE_URI', os.path.join(BASE_PATH, 'shop.db')))
 
 SECRET_KEY = 'adsjdasdasdoasd0as98d0am4m35048m90mcw4fum3h4650439875n4354'
 TELEGRAM_BOT_KEY = '354109767:AAHmro-KA9B2NHgymuIzr-vXxGIV8cMDgyo'

@@ -72,13 +72,13 @@
                               <span class="input-group-btn">
                                   <button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
                               </span>
-                              <input type="text" class="form-control text-center" name="count-{{ item.id }}" value="1" style="width: 180%">
+                              <input type="text" class="form-control text-center" id="{{ item.id }}" value="1" style="width: 180%">
                               <span class="input-group-btn">
                                   <button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
                               </span>
                           </div>
                       </div>
-                      <button type="submit" class="btn btn-primary pull-right" style="margin-left: 0;" data-id="{{ item.id }}">Добавить в корзину</button>
+                      <button id="basket-add" type="submit" class="btn btn-primary pull-right" style="margin-left: 0;" data-id="{{ item.id }}">Добавить в корзину</button>
                   </div>
                 <br>
                 <br>
@@ -200,6 +200,15 @@
         }
       );
         wow.init();
+    </script>
+    <script>
+        $(function () {
+            $('#basket-add').on('click', function () {
+                var id = $(this).data('id');
+                var count = $('#' + id).val();
+                $.post('/basket/add/', {id: id, count: count});
+            })
+        })
     </script>
 
   </body>

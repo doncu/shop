@@ -69,57 +69,23 @@
                                 <th>Мёда</th>
                                 <th>Стоимость 1 ед товара</th>
                                 <th>Общая сумма</th>
-                                <th>Изменить количество</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for obj, count in basket %}
-                              <tr>
+                              <tr id="row-{{ obj.id }}">
                                 <td>{{ count }}</td>
                                 <td>{{ obj.title }}</td>
                                 <td>{{ obj.price }} руб.</td>
                                 <td>{{ obj.price * count }} руб.</td>
+                                <td>
+                                    <button data-id="{{ obj.id }}" type="button" class="btn btn-default btn-remove" aria-label="Left Align">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    </button>
+                                </td>
                               </tr>
                             {% endfor %}
-                            <!-- Тестовая запись -->
-                                <tr>
-                                    <td>4</td>
-                                    <td>Липовый</td>
-                                    <td>450 р.</td>
-                                    <td>1800 р.</td>
-                                    <td>
-                                        <div class="col-xs-5 col-xs-offset-5">
-                                          <div class="input-group number-spinner">
-                                              <span class="input-group-btn">
-                                                  <button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
-                                              </span>
-                                              <input type="text" class="form-control text-center" value="1" style="width: 160%; margin-left: -22%; font-size: 12px">
-                                              <span class="input-group-btn">
-                                                  <button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
-                                              </span>
-                                          </div>
-                                      </div>
-                                    <td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Цветочный</td>
-                                    <td>300 р.</td>
-                                    <td>900 р.</td>
-                                    <td>
-                                        <div class="col-xs-5 col-xs-offset-5">
-                                          <div class="input-group number-spinner">
-                                              <span class="input-group-btn">
-                                                  <button class="btn btn-default" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
-                                              </span>
-                                              <input type="text" class="form-control text-center" value="1" style="width: 160%; margin-left: -22%; font-size: 12px">
-                                              <span class="input-group-btn">
-                                                  <button class="btn btn-default" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
-                                              </span>
-                                          </div>
-                                      </div>
-                                    <td>
-                                </tr>
                         </tbody>
                     </table>
                 </div>
@@ -134,26 +100,29 @@
                 <label for="name">
                   Имя
                 </label>
-                <input type="text" placeholder="" id="name" class="form-control">
+                <input type="text" placeholder="" name="name" class="form-control" required="required">
               </div>
               <div class="form-group">
                 <label for="email">
                   Email
                 </label>
-                <input type="text" placeholder="" id="email" class="form-control">
+                <input type="email" placeholder="" name="email" class="form-control" required="required">
               </div>
               <div class="form-group">
                 <label for="phone">
                   Телефон
                 </label>
-                <input type="text" id="phone" class="form-control">
+                <input type="text" name="phone" class="form-control" required="required">
               </div>
               <div class="form-group">
                 <label for="description">
                   Сообщение
                 </label>
-                <textarea id="description" name="description" placeholder="" rows="5" class="form-control"></textarea>
+                <textarea name="description" placeholder="" rows="5" class="form-control"></textarea>
               </div>
+              {% for obj, count in basket %}
+                  <input id="{{ obj.id }}" name="production[]" type="hidden" value="{{ obj.id }}-{{ count }}"></input>
+              {% endfor %}
               <button class="btn btn-info" type="submit">Оформить заказ</button>
             </form>
           </div>
@@ -268,6 +237,15 @@
         }
       );
         wow.init();
+    </script>
+    <script>
+        $(function() {
+            $(".btn-remove").on("click", function() {
+                var id = $(this).data('id');
+                $('#' + id).remove();
+                $('#row-' + id).remove();
+            })
+        })
     </script>
 
   </body>
