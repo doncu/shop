@@ -4,7 +4,7 @@ VENVPATH = $(shell pwd)/$(VENVNAME)
 
 GITVERSION = $(shell git rev-parse HEAD)
 
-REMOTE_SSH = root@mzhv.ru
+REMOTE_SSH = root:lh8tA24V@mzhv.ru
 
 
 make-venv:
@@ -32,4 +32,4 @@ create-venv: pack-venv clean
 
 upload-venv: create-venv
 	scp $(VENVPATH) $(REMOTE_SSH):/tmp/
-	ssh $(REMOTE_SSH) "tar -zxvf /tmp/$(VENVNAME) -C /root/venv_shop-$(GITVERSION); ln -s /root/venv_shop /root/venv_shop-$(GITVERSION); supervisorctl reread; supervisorctl update; supervisorctl restart shop"
+	ssh $(REMOTE_SSH) "mkdir -p /root/venv_shop-$(GITVERSION); tar -zxvf /tmp/$(VENVNAME) -C /root/venv_shop-$(GITVERSION); ln -s /root/venv_shop-$(GITVERSION) /root/venv_shop; supervisorctl reread; supervisorctl update; supervisorctl restart shop"
