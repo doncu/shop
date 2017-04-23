@@ -1,16 +1,35 @@
-from telegram.ext import Updater, CommandHandler
+from telegram import Bot
 
 import config
 
 
-def help(bot, update):
-    update.message.reply_text('Всё что я умею это отправлять инфу о заказах в чат.')
+class TeleBot:
+    _bot = None
+
+    def __init__(self, token, **kwargs):
+        self.token = token
+        self.kwargs = kwargs
+
+    @property
+    def bot(self):
+        if self._bot is None:
+            self._bot = Bot(token=self.token, **self.kwargs)
+        return self._bot
+
+    def send_message(self, text):
+        self.bot.send_message(config.TELEGRAM_BOT['chat_id'], text)
 
 
 def send_message(name, email, phone, description, basket):
-    pass
+    basket_text = ''
+    text = '''Вам поступил заказ:
+    Имя: {name}
+    Email: {email}
+    Телефон: {phone}
+    Описание: {description}
+    Заказ: {basket}
+    '''.format(name=name, email=email, phone=phone, description=description, basket=basket_text)
+    bot.send_message(text)
 
-# updater = Updater(config.TELEGRAM_BOT_KEY)
-# updater.dispatcher.add_handler(CommandHandler('help', help))
-# updater.start_polling()
-# updater.idle()
+
+bot = TeleBot(config.TELEGRAM_BOT['key'])

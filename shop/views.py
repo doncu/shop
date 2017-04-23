@@ -67,11 +67,11 @@ app.add_url_rule('/basket/', view_func=BasketView.as_view('basket'))
 
 @app.route('/basket/add/', methods=('POST', ))
 def basket_add():
-    id_ = request.form.get('id', type=int)
+    id_ = request.form.get('id', type=str)
     count = request.form.get('count', type=int, default=1)
-    if 'basket' not in session:
-        session['basket'] = {}
-    session['basket'][id_] = count
+    data = session.get('basket', {}).copy()
+    data[id_] = count
+    session['basket'] = data
     return 'OK'
 
 
