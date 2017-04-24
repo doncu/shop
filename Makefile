@@ -30,7 +30,14 @@ clean:
 
 create-venv: pack-venv clean
 
-upload-venv: create-venv
+upload-venv:
 	scp -P 18206 $(VENVPATH) $(REMOTE_SSH):/tmp/
-	ssh $(REMOTE_SSH) -p 18206 "sudo mkdir -p /root/venv_shop-$(GITVERSION); sudo tar -zxvf /tmp/$(VENVNAME) -C /root/venv_shop-$(GITVERSION); sudo ln -s /root/venv_shop-$(GITVERSION) /root/venv_shop; sudo supervisorctl reread; sudo supervisorctl update; sudo supervisorctl restart shop"
+	ssh $(REMOTE_SSH) -p 18206 "sudo mkdir -p /root/venv_shop-$(GITVERSION) && \
+		sudo tar -zxf /tmp/$(VENVNAME) -C /root/venv_shop-$(GITVERSION) && \
+		rm -rf /root/venv_shop && \
+		sudo ln -s /root/venv_shop-$(GITVERSION) /root/venv_shop && \
+		sudo supervisorctl reread; sudo supervisorctl update; sudo supervisorctl restart shop"
+
+
+deploy: create-venv upload-venv
 	rm -rf $(VENVPATH)
