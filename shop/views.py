@@ -59,7 +59,7 @@ class BasketView(views.MethodView):
         if basket:
             send_message(name, email, phone, description, basket)
         session.clear()
-        return redirect(url_for('basket'))
+        return redirect(url_for('basket'), 301)
 
 
 app.add_url_rule('/basket/', view_func=BasketView.as_view('basket'))
