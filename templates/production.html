@@ -79,7 +79,7 @@
                           </div>
                       </div>
                       <div class="col-sm-7">
-                        <button type="submit" class="btn btn-primary pull-right basket-add" style="margin-left: 10%; width: 80%;" data-id="{{ item.id }}">Добавить в корзину</button>
+                        <button type="submit" data-toggle="modal" data-target="#myModal" class="btn btn-primary pull-right basket-add" style="margin-left: 10%; width: 80%;" data-id="{{ item.id }}">Добавить в корзину</button>
                       </div>
                 <br>
                 <br>
@@ -88,6 +88,23 @@
           </div>
           </div>
         {% endfor %}
+                          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Сообщение: </h4>
+                                  </div>
+                                <div class="modal-body">
+                                    <p>Товар добавлен в корзину</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                                  <a href="/basket/" class="btn btn-primary">Перейти в корзину</a>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
       </div>
     </div>
     <!--container end-->
