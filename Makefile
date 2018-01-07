@@ -1,6 +1,7 @@
 BUILDDIR = /tmp/venv_shop
 VENVNAME = venv_shop.tar.gz
 VENVPATH = $(shell pwd)/$(VENVNAME)
+python = /usr/bin/python3
 
 GITVERSION = $(shell git rev-parse HEAD)
 
